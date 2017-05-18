@@ -1,0 +1,181 @@
+ABSTRACTTYPES_H	AbstractTypes.h	2;"	d
+BasicSensor	AbstractTypes.h	/^    BasicSensor(InfoCookie inSensorInfo) { setInfo(inSensorInfo); }$/;"	f	class:BasicSensor
+BasicSensor	AbstractTypes.h	/^class BasicSensor$/;"	c
+BasicSwitch	AbstractTypes.h	/^    BasicSwitch(InfoCookie inSwitchInfo, const unsigned long stateChangeTimer)$/;"	f	class:BasicSwitch
+BasicSwitch	AbstractTypes.h	/^class BasicSwitch$/;"	c
+HumiditySensor	AbstractTypes.h	/^    HumiditySensor() {}$/;"	f	class:HumiditySensor
+HumiditySensor	AbstractTypes.h	/^class HumiditySensor$/;"	c
+InfoCookie	AbstractTypes.h	/^struct InfoCookie$/;"	s
+ItemLocation	AbstractTypes.h	/^enum ItemLocation$/;"	g
+SwitchState	AbstractTypes.h	/^enum SwitchState$/;"	g
+TemperatureSensor	AbstractTypes.h	/^    TemperatureSensor() {}$/;"	f	class:TemperatureSensor
+TemperatureSensor	AbstractTypes.h	/^class TemperatureSensor$/;"	c
+getInfo	AbstractTypes.h	/^    InfoCookie getInfo() { return switchInfo; }$/;"	f	class:BasicSwitch
+getInfo	AbstractTypes.h	/^    virtual InfoCookie getInfo() { return sensorInfo; }$/;"	f	class:BasicSensor
+getState	AbstractTypes.h	/^    SwitchState getState() { return state; }$/;"	f	class:BasicSwitch
+inside	AbstractTypes.h	/^    inside,$/;"	e	enum:ItemLocation
+invalidLocation	AbstractTypes.h	/^    invalidLocation = 0,$/;"	e	enum:ItemLocation
+invalidState	AbstractTypes.h	/^    invalidState = 0,$/;"	e	enum:SwitchState
+location	AbstractTypes.h	/^    ItemLocation location;$/;"	m	struct:InfoCookie
+off	AbstractTypes.h	/^    off$/;"	e	enum:SwitchState
+on	AbstractTypes.h	/^    on,$/;"	e	enum:SwitchState
+outside	AbstractTypes.h	/^    outside$/;"	e	enum:ItemLocation
+sensorInfo	AbstractTypes.h	/^    InfoCookie sensorInfo;$/;"	m	class:BasicSensor
+setInfo	AbstractTypes.h	/^    void setInfo(InfoCookie inSensorInfo) { sensorInfo = inSensorInfo; }$/;"	f	class:BasicSensor
+setInfo	AbstractTypes.h	/^    void setInfo(InfoCookie inSwitchInfo) { switchInfo = inSwitchInfo; }$/;"	f	class:BasicSwitch
+state	AbstractTypes.h	/^    SwitchState state = invalidState;$/;"	m	class:BasicSwitch
+switchInfo	AbstractTypes.h	/^    InfoCookie switchInfo;$/;"	m	class:BasicSwitch
+switchTimer	AbstractTypes.h	/^    Timer switchTimer;$/;"	m	class:BasicSwitch
+~BasicSensor	AbstractTypes.h	/^    virtual ~BasicSensor() {}$/;"	f	class:BasicSensor
+~BasicSwitch	AbstractTypes.h	/^    virtual ~BasicSwitch() {}$/;"	f	class:BasicSwitch
+~HumiditySensor	AbstractTypes.h	/^    virtual ~HumiditySensor() {}$/;"	f	class:HumiditySensor
+~TemperatureSensor	AbstractTypes.h	/^    virtual ~TemperatureSensor() {}$/;"	f	class:TemperatureSensor
+DHT	DHT.cpp	/^DHT::DHT(uint8_t pin, uint8_t type, uint8_t count) {$/;"	f	class:DHT
+begin	DHT.cpp	/^void DHT::begin(void) {$/;"	f	class:DHT
+computeHeatIndex	DHT.cpp	/^float DHT::computeHeatIndex(float tempFahrenheit, float percentHumidity) {$/;"	f	class:DHT
+convertCtoF	DHT.cpp	/^float DHT::convertCtoF(float c) {$/;"	f	class:DHT
+convertFtoC	DHT.cpp	/^float DHT::convertFtoC(float f) {$/;"	f	class:DHT
+read	DHT.cpp	/^boolean DHT::read(void) {$/;"	f	class:DHT
+readHumidity	DHT.cpp	/^float DHT::readHumidity(void) {$/;"	f	class:DHT
+readTemperature	DHT.cpp	/^float DHT::readTemperature(bool S) {$/;"	f	class:DHT
+AM2301	DHT.h	21;"	d
+DHT	DHT.h	/^class DHT {$/;"	c
+DHT11	DHT.h	18;"	d
+DHT21	DHT.h	20;"	d
+DHT22	DHT.h	19;"	d
+DHT_H	DHT.h	2;"	d
+MAXTIMINGS	DHT.h	16;"	d
+_count	DHT.h	/^  uint8_t _pin, _type, _count;$/;"	m	class:DHT
+_lastreadtime	DHT.h	/^  unsigned long _lastreadtime;$/;"	m	class:DHT
+_pin	DHT.h	/^  uint8_t _pin, _type, _count;$/;"	m	class:DHT
+_type	DHT.h	/^  uint8_t _pin, _type, _count;$/;"	m	class:DHT
+data	DHT.h	/^  uint8_t data[6];$/;"	m	class:DHT
+firstreading	DHT.h	/^  boolean firstreading;$/;"	m	class:DHT
+getHumidity	Sensors.cpp	/^float DHTSensor::getHumidity()$/;"	f	class:DHTSensor
+getTemp	Sensors.cpp	/^float DHTSensor::getTemp()$/;"	f	class:DHTSensor
+getTemp	Sensors.cpp	/^float ThermistorSensor::getTemp()$/;"	f	class:ThermistorSensor
+setup	Sensors.cpp	/^void ThermistorSensor::setup(uint8_t inPin)$/;"	f	class:ThermistorSensor
+DHTSensor	Sensors.h	/^    DHTSensor(uint8_t pin, InfoCookie inSensorInfo, uint8_t type)$/;"	f	class:DHTSensor
+DHTSensor	Sensors.h	/^class DHTSensor : public BasicSensor,$/;"	c
+SENSORS_H	Sensors.h	2;"	d
+ThermistorSensor	Sensors.h	/^    ThermistorSensor(uint8_t inPin, InfoCookie inSensorInfo)$/;"	f	class:ThermistorSensor
+ThermistorSensor	Sensors.h	/^class ThermistorSensor : public BasicSensor, public TemperatureSensor$/;"	c
+getInfo	Sensors.h	/^    virtual InfoCookie getInfo() { return BasicSensor::getInfo(); }$/;"	f	class:DHTSensor
+getInfo	Sensors.h	/^    virtual InfoCookie getInfo() { return BasicSensor::getInfo(); }$/;"	f	class:ThermistorSensor
+lastHumidity	Sensors.h	/^    float lastHumidity;$/;"	m	class:DHTSensor
+lastHumidity	Sensors.h	/^    float lastHumidity;$/;"	m	class:ThermistorSensor
+lastTemperature	Sensors.h	/^    float lastTemperature;$/;"	m	class:DHTSensor
+lastTemperature	Sensors.h	/^    float lastTemperature;$/;"	m	class:ThermistorSensor
+measuredResistance	Sensors.h	/^    float measuredResistance;$/;"	m	class:ThermistorSensor
+pinNumber	Sensors.h	/^    uint8_t pinNumber;$/;"	m	class:ThermistorSensor
+temperature	Sensors.h	/^    float temperature;$/;"	m	class:ThermistorSensor
+thermistorResistance	Sensors.h	/^    float thermistorResistance;$/;"	m	class:ThermistorSensor
+~DHTSensor	Sensors.h	/^    ~DHTSensor() {}$/;"	f	class:DHTSensor
+~ThermistorSensor	Sensors.h	/^    virtual ~ThermistorSensor() {}$/;"	f	class:ThermistorSensor
+forceOff	Switches.cpp	/^void Relay::forceOff()$/;"	f	class:Relay
+forceOn	Switches.cpp	/^void Relay::forceOn()$/;"	f	class:Relay
+setup	Switches.cpp	/^void InvertingRelay::setup(int inPin)$/;"	f	class:InvertingRelay
+setup	Switches.cpp	/^void Relay::setup(int inPin)$/;"	f	class:Relay
+switchOff	Switches.cpp	/^void Relay::switchOff()$/;"	f	class:Relay
+switchOn	Switches.cpp	/^void Relay::switchOn()$/;"	f	class:Relay
+InvertingRelay	Switches.h	/^    InvertingRelay(int inPin, InfoCookie inSwitchInfo,$/;"	f	class:InvertingRelay
+InvertingRelay	Switches.h	/^class InvertingRelay : public Relay$/;"	c
+Relay	Switches.h	/^    Relay(int inPin, InfoCookie inSwitchInfo,$/;"	f	class:Relay
+Relay	Switches.h	/^class Relay : public BasicSwitch$/;"	c
+SWITCHES_H	Switches.h	2;"	d
+offLevel	Switches.h	/^    int offLevel;$/;"	m	class:Relay
+onLevel	Switches.h	/^    int onLevel;$/;"	m	class:Relay
+pin	Switches.h	/^    int pin;$/;"	m	class:Relay
+SystemControl	SystemControl.cpp	/^SystemControl::SystemControl(const int inTempSensorArrayLength,$/;"	f	class:SystemControl
+addDHT11	SystemControl.cpp	/^void SystemControl::addDHT11(const int inSensorPin,$/;"	f	class:SystemControl
+addDHT22	SystemControl.cpp	/^void SystemControl::addDHT22(const int inSensorPin,$/;"	f	class:SystemControl
+addHumidSensor	SystemControl.cpp	/^void SystemControl::addHumidSensor(HumiditySensor* newSensor)$/;"	f	class:SystemControl
+addSensor	SystemControl.cpp	/^void SystemControl::addSensor(const SensorType inSensorType,$/;"	f	class:SystemControl
+addTempSensor	SystemControl.cpp	/^void SystemControl::addTempSensor(TemperatureSensor* newSensor)$/;"	f	class:SystemControl
+addThermLM35	SystemControl.cpp	/^void SystemControl::addThermLM35(const int inSensorPin,$/;"	f	class:SystemControl
+getAvgHumid	SystemControl.cpp	/^float SystemControl::getAvgHumid()$/;"	f	class:SystemControl
+getAvgHumid	SystemControl.cpp	/^float SystemControl::getAvgHumid(InfoCookie cookie)$/;"	f	class:SystemControl
+getAvgTemp	SystemControl.cpp	/^float SystemControl::getAvgTemp()$/;"	f	class:SystemControl
+getAvgTemp	SystemControl.cpp	/^float SystemControl::getAvgTemp(InfoCookie cookie)$/;"	f	class:SystemControl
+~SystemControl	SystemControl.cpp	/^SystemControl::~SystemControl() {}$/;"	f	class:SystemControl
+DHT_11	SystemControl.h	/^    DHT_11,$/;"	e	enum:SensorType
+DHT_22	SystemControl.h	/^    DHT_22,$/;"	e	enum:SensorType
+Invalid_Type	SystemControl.h	/^    Invalid_Type = 0,$/;"	e	enum:SensorType
+SYSTEMCONTROL_H	SystemControl.h	2;"	d
+SensorType	SystemControl.h	/^enum SensorType$/;"	g
+SystemControl	SystemControl.h	/^class SystemControl$/;"	c
+Therm_LM35	SystemControl.h	/^    Therm_LM35$/;"	e	enum:SensorType
+humidArray	SystemControl.h	/^    HumiditySensor** humidArray;$/;"	m	class:SystemControl
+humidArraySize	SystemControl.h	/^    int humidArraySize;$/;"	m	class:SystemControl
+tempArray	SystemControl.h	/^    TemperatureSensor** tempArray;$/;"	m	class:SystemControl
+tempArraySize	SystemControl.h	/^    int tempArraySize;$/;"	m	class:SystemControl
+TIMER_H	Timer.h	2;"	d
+Timer	Timer.h	/^    Timer() {}$/;"	f	class:Timer
+Timer	Timer.h	/^    Timer(const unsigned long inDeltaTime) { setup(inDeltaTime); }$/;"	f	class:Timer
+Timer	Timer.h	/^class Timer$/;"	c
+checkTime	Timer.h	/^    boolean checkTime()$/;"	f	class:Timer
+deltaTime	Timer.h	/^    unsigned long deltaTime;$/;"	m	class:Timer
+getDeltaTime	Timer.h	/^    unsigned long getDeltaTime() { return deltaTime; }$/;"	f	class:Timer
+lastTime	Timer.h	/^    unsigned long lastTime;$/;"	m	class:Timer
+reset	Timer.h	/^    void reset() { lastTime = millis(); }$/;"	f	class:Timer
+setDeltaTime	Timer.h	/^    void setDeltaTime(const unsigned long inDeltaTime)$/;"	f	class:Timer
+setup	Timer.h	/^    void setup(const unsigned long inDeltaTime)$/;"	f	class:Timer
+~Timer	Timer.h	/^    ~Timer() {}$/;"	f	class:Timer
+HEATER_H	Utilities.h	2;"	d
+Heater	Utilities.h	/^    Heater(unsigned long stateChangeTime, float highThresh, float lowThresh,$/;"	f	class:Heater
+Heater	Utilities.h	/^class Heater$/;"	c
+cookie	Utilities.h	/^    InfoCookie cookie;$/;"	m	class:Heater
+evalRoom	Utilities.h	/^    void evalRoom()$/;"	f	class:Heater
+highThresh	Utilities.h	/^    float highThresh;$/;"	m	class:Heater
+lowThresh	Utilities.h	/^    float lowThresh;$/;"	m	class:Heater
+roomTempRef	Utilities.h	/^    float *roomTempRef;$/;"	m	class:Heater
+sw	Utilities.h	/^    BasicSwitch *sw;$/;"	m	class:Heater
+ARDUINO	Visual Micro\.roomControl.vsarduino.h	15;"	d
+ARDUINO_ARCH_AVR	Visual Micro\.roomControl.vsarduino.h	22;"	d
+ARDUINO_AVR_NANO	Visual Micro\.roomControl.vsarduino.h	23;"	d
+ARDUINO_MAIN	Visual Micro\.roomControl.vsarduino.h	16;"	d
+F	Visual Micro\.roomControl.vsarduino.h	68;"	d
+F	Visual Micro\.roomControl.vsarduino.h	69;"	d
+F_CPU	Visual Micro\.roomControl.vsarduino.h	19;"	d
+GCC_VERSION	Visual Micro\.roomControl.vsarduino.h	21;"	d
+GCC_VERSION	Visual Micro\.roomControl.vsarduino.h	32;"	d
+NEW_H	Visual Micro\.roomControl.vsarduino.h	43;"	d
+NOINLINE	Visual Micro\.roomControl.vsarduino.h	40;"	d
+PGM_VOID_P	Visual Micro\.roomControl.vsarduino.h	42;"	d
+_VSARDUINO_H_	Visual Micro\.roomControl.vsarduino.h	12;"	d
+__AVR_ATmega328P__	Visual Micro\.roomControl.vsarduino.h	14;"	d
+__AVR_ATmega328p__	Visual Micro\.roomControl.vsarduino.h	13;"	d
+__AVR__	Visual Micro\.roomControl.vsarduino.h	17;"	d
+__asm__	Visual Micro\.roomControl.vsarduino.h	25;"	d
+__attribute__	Visual Micro\.roomControl.vsarduino.h	39;"	d
+__avr__	Visual Micro\.roomControl.vsarduino.h	18;"	d
+__builtin_va_end	Visual Micro\.roomControl.vsarduino.h	37;"	d
+__builtin_va_list	Visual Micro\.roomControl.vsarduino.h	/^typedef void *__builtin_va_list;$/;"	t
+__builtin_va_start	Visual Micro\.roomControl.vsarduino.h	36;"	d
+__cplusplus	Visual Micro\.roomControl.vsarduino.h	20;"	d
+__cxa_pure_virtual	Visual Micro\.roomControl.vsarduino.h	/^extern "C" void __cxa_pure_virtual() {;}$/;"	f
+__extension__	Visual Micro\.roomControl.vsarduino.h	26;"	d
+__inline__	Visual Micro\.roomControl.vsarduino.h	24;"	d
+__inline__	Visual Micro\.roomControl.vsarduino.h	29;"	d
+__volatile__	Visual Micro\.roomControl.vsarduino.h	31;"	d
+analogInPinToBit	Visual Micro\.roomControl.vsarduino.h	78;"	d
+byte	Visual Micro\.roomControl.vsarduino.h	/^typedef unsigned char byte;$/;"	t
+cli	Visual Micro\.roomControl.vsarduino.h	70;"	d
+cli	Visual Micro\.roomControl.vsarduino.h	71;"	d
+digitalPinToBitMask	Visual Micro\.roomControl.vsarduino.h	76;"	d
+digitalPinToPort	Visual Micro\.roomControl.vsarduino.h	75;"	d
+digitalPinToTimer	Visual Micro\.roomControl.vsarduino.h	77;"	d
+pgm_read_byte	Visual Micro\.roomControl.vsarduino.h	72;"	d
+pgm_read_word	Visual Micro\.roomControl.vsarduino.h	73;"	d
+pgm_read_word2	Visual Micro\.roomControl.vsarduino.h	74;"	d
+portInputRegister	Visual Micro\.roomControl.vsarduino.h	80;"	d
+portModeRegister	Visual Micro\.roomControl.vsarduino.h	81;"	d
+portOutputRegister	Visual Micro\.roomControl.vsarduino.h	79;"	d
+prog_void	Visual Micro\.roomControl.vsarduino.h	41;"	d
+volatile	Visual Micro\.roomControl.vsarduino.h	33;"	d
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
